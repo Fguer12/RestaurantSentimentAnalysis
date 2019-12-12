@@ -79,10 +79,9 @@ df['sentiment_id'] = lbl_enc.transform(df['Sentiment'])
 
 df.head(10)
 
+""" Helper function for Text normalisation"""  
 # Here we introduce the stemmatization function, which we use afterwards within the count vectorizer  
 # We have to describe the function separately because Sklearn does not offer a native stemming function 
-""" Helper function for Text normalisation"""  
-
 
 import nltk
 from nltk.stem.porter import PorterStemmer
@@ -110,6 +109,8 @@ def stemming_tokenizer(str_input):
 
     stemming_tokenizer("I went fishing to get fishes")
     textblob_tokenizer("I went fishing to get fishes")
+
+""" Text normalisation and Model creation"""  
 
 ## NNOTE: In this code section we transform the review data into text data. Labels have already been encoded  
 from sklearn.model_selection import cross_val_score, StratifiedShuffleSplit, StratifiedKFold
